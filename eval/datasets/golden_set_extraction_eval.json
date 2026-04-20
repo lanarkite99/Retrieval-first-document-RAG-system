@@ -1,0 +1,378 @@
+[
+  {
+    "name": "golden_invoice_01_nova",
+    "supplier": "Nova IT Systems Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_01_Nova.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/001",
+      "supplier_name": "Nova IT Systems Pvt. Ltd.",
+      "buyer_name": "Horizon Retail Pvt. Ltd.",
+      "amount": 1288476.0
+    },
+    "expected_extra_fields": {
+      "place of supply": "Mumbai - 400013"
+    }
+  },
+  {
+    "name": "golden_invoice_02_techforge",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_02_TechForge.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/002",
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "buyer_name": "Apex Business Consultants",
+      "amount": 351655.36
+    },
+    "expected_extra_fields": {
+      "place of supply": "Mumbai - 400021"
+    }
+  },
+  {
+    "name": "golden_invoice_03_techforge",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_03_TechForge.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/003",
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "buyer_name": "Local Stationery Traders",
+      "amount": 607196.8
+    },
+    "expected_extra_fields": {
+      "place of supply": "Mumbai - 400028"
+    }
+  },
+  {
+    "name": "golden_invoice_04_nova",
+    "supplier": "Nova IT Systems Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_04_Nova.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/004",
+      "supplier_name": "Nova IT Systems Pvt. Ltd.",
+      "buyer_name": "Mumbai Office Needs",
+      "amount": 199024.7
+    },
+    "expected_extra_fields": {
+      "place of supply": "Mumbai - 400064"
+    }
+  },
+  {
+    "name": "golden_invoice_05_skynet",
+    "supplier": "SkyNet Solutions LLP",
+    "file": "golden_set/GST_Invoice_05_SkyNet.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/005",
+      "supplier_name": "SkyNet Solutions LLP",
+      "buyer_name": "Tech Retailers Pvt. Ltd.",
+      "amount": 661438.4
+    },
+    "expected_extra_fields": {
+      "place of supply": "Mumbai - 400051"
+    }
+  },
+  {
+    "name": "golden_invoice_06_nova",
+    "supplier": "Nova IT Systems Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_06_Nova.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/006",
+      "supplier_name": "Nova IT Systems Pvt. Ltd.",
+      "buyer_name": "Delhi Enterprises",
+      "amount": 1129173.92
+    },
+    "expected_extra_fields": {
+      "place of supply": "New Delhi - 110001"
+    }
+  },
+  {
+    "name": "golden_invoice_07_electrohub",
+    "supplier": "ElectroHub India Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_07_ElectroHub.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/007",
+      "supplier_name": "ElectroHub India Pvt. Ltd.",
+      "buyer_name": "Bangalore Tech Solutions",
+      "amount": 1717863.84
+    },
+    "expected_extra_fields": {
+      "place of supply": "Bangalore - 560001"
+    }
+  },
+  {
+    "name": "golden_invoice_08_techforge",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_08_TechForge.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/008",
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "buyer_name": "Chennai Digital Traders",
+      "amount": 651272.68
+    },
+    "expected_extra_fields": {
+      "place of supply": "Chennai - 600040"
+    }
+  },
+  {
+    "name": "golden_invoice_09_electrohub",
+    "supplier": "ElectroHub India Pvt. Ltd.",
+    "file": "golden_set/GST_Invoice_09_ElectroHub.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/009",
+      "supplier_name": "ElectroHub India Pvt. Ltd.",
+      "buyer_name": "Hyderabad IT Hub Pvt. Ltd.",
+      "amount": 735554.4
+    },
+    "expected_extra_fields": {
+      "place of supply": "Hyderabad - 500081"
+    }
+  },
+  {
+    "name": "golden_invoice_10_skynet",
+    "supplier": "SkyNet Solutions LLP",
+    "file": "golden_set/GST_Invoice_10_SkyNet.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "TF/2026-27/010",
+      "supplier_name": "SkyNet Solutions LLP",
+      "buyer_name": "Kolkata Eastern Impex",
+      "amount": 734815.2
+    },
+    "expected_extra_fields": {
+      "place of supply": "Kolkata - 700016"
+    }
+  },
+  {
+    "name": "golden_bom_01_laptop",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/BOM_01_TF-LAP-001.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "part_number": "TF-LAP-001",
+      "doc_date": "2026-04-16"
+    },
+    "expected_extra_fields": {
+      "product": "Premium Laptop Assembly"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "COMP-134",
+        "description": "Motherboard",
+        "quantity": 4
+      },
+      {
+        "item_no": "2",
+        "part_number": "COMP-306",
+        "description": "Processor",
+        "quantity": 6
+      },
+      {
+        "item_no": "3",
+        "part_number": "COMP-440",
+        "description": "RAM",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "name": "golden_bom_02_server",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/BOM_02_TF-SRV-002.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "part_number": "TF-SRV-002",
+      "doc_date": "2026-04-16"
+    },
+    "expected_extra_fields": {
+      "product": "Enterprise Server Rack"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "COMP-106",
+        "description": "Motherboard",
+        "quantity": 3
+      },
+      {
+        "item_no": "2",
+        "part_number": "COMP-284",
+        "description": "Processor",
+        "quantity": 4
+      },
+      {
+        "item_no": "8",
+        "part_number": "COMP-686",
+        "description": "PSU",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "name": "golden_bom_03_desktop",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/BOM_03_TF-DSK-003.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "part_number": "TF-DSK-003",
+      "doc_date": "2026-04-16"
+    },
+    "expected_extra_fields": {
+      "product": "Basic Desktop PC Kit"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "COMP-123",
+        "description": "Motherboard",
+        "quantity": 5
+      },
+      {
+        "item_no": "4",
+        "part_number": "COMP-167",
+        "description": "SSD/HDD",
+        "quantity": 4
+      },
+      {
+        "item_no": "7",
+        "part_number": "COMP-459",
+        "description": "Chassis",
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "name": "golden_bom_04_switch",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/BOM_04_TF-SW-004.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "part_number": "TF-SW-004",
+      "doc_date": "2026-04-16"
+    },
+    "expected_extra_fields": {
+      "product": "24-Port Managed Switch"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "COMP-623",
+        "description": "Motherboard",
+        "quantity": 6
+      },
+      {
+        "item_no": "8",
+        "part_number": "COMP-298",
+        "description": "PSU",
+        "quantity": 4
+      },
+      {
+        "item_no": "9",
+        "part_number": "COMP-382",
+        "description": "Cooling Fan",
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "name": "golden_bom_05_workstation",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/BOM_05_TF-WS-005.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "part_number": "TF-WS-005",
+      "doc_date": "2026-04-16"
+    },
+    "expected_extra_fields": {
+      "product": "Smart Office Workstation"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "COMP-505",
+        "description": "Motherboard",
+        "quantity": 1
+      },
+      {
+        "item_no": "8",
+        "part_number": "COMP-804",
+        "description": "PSU",
+        "quantity": 2
+      },
+      {
+        "item_no": "9",
+        "part_number": "COMP-778",
+        "description": "Cooling Fan",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "name": "golden_eway_bill_1",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/Eway_Bill_1.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "amount": 269040.0
+    },
+    "expected_extra_fields": {
+      "ewb no": "271234567890",
+      "invoice no": "TF/2026-27/001",
+      "vehicle no": "MH02-AB-1234",
+      "goods description": "Electronics & Accessories"
+    }
+  },
+  {
+    "name": "golden_eway_bill_2",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/Eway_Bill_2.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "supplier_name": "TechForge Solutions Pvt. Ltd.",
+      "amount": 566400.0
+    },
+    "expected_extra_fields": {
+      "ewb no": "271234567891",
+      "invoice no": "TF/2026-27/006",
+      "vehicle no": "MH04-CD-5678",
+      "goods description": "Electronics & Accessories"
+    }
+  },
+  {
+    "name": "golden_financial_balance",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/Financial_1_Balance.pdf",
+    "doc_type": "unknown",
+    "expected_fields": {},
+    "expected_extra_fields": {}
+  },
+  {
+    "name": "golden_financial_profit",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/Financial_2_Profit.pdf",
+    "doc_type": "unknown",
+    "expected_fields": {},
+    "expected_extra_fields": {}
+  },
+  {
+    "name": "golden_financial_cash",
+    "supplier": "TechForge Solutions Pvt. Ltd.",
+    "file": "golden_set/Financial_3_Cash.pdf",
+    "doc_type": "unknown",
+    "expected_fields": {},
+    "expected_extra_fields": {}
+  }
+]

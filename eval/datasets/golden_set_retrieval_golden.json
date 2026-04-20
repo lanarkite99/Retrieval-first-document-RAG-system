@@ -1,0 +1,410 @@
+[
+  {
+    "name": "q_invoice_01_number",
+    "query": "TF/2026-27/001",
+    "query_type": "invoice_number",
+    "expected_source_filename": "GST_Invoice_01_Nova.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "TF/2026-27/001",
+    "expected_snippet_contains": [
+      "TF/2026-27/001"
+    ]
+  },
+  {
+    "name": "q_invoice_01_line_item",
+    "query": "find invoice containing Server Rack 42U for Horizon Retail",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_01_Nova.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Server Rack 42U",
+      "Horizon Retail"
+    ]
+  },
+  {
+    "name": "q_invoice_02_service",
+    "query": "software development services invoice apex business consultants",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_02_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Software Development Services"
+    ]
+  },
+  {
+    "name": "q_invoice_02_amount",
+    "query": "grand total 351655.36",
+    "query_type": "invoice_total",
+    "expected_source_filename": "GST_Invoice_02_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "351,655.36"
+    ]
+  },
+  {
+    "name": "q_invoice_03_mouse",
+    "query": "logitech wireless mouse local stationery traders",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_03_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Logitech Wireless Mouse"
+    ]
+  },
+  {
+    "name": "q_invoice_03_switch",
+    "query": "cisco 24-port switch invoice TF/2026-27/003",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_03_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Cisco 24-Port Switch"
+    ]
+  },
+  {
+    "name": "q_invoice_04_monitor",
+    "query": "samsung 27 monitor mumbai office needs",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_04_Nova.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Samsung 27"
+    ]
+  },
+  {
+    "name": "q_invoice_04_total",
+    "query": "grand total 199024.70",
+    "query_type": "invoice_total",
+    "expected_source_filename": "GST_Invoice_04_Nova.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "199,024.70"
+    ]
+  },
+  {
+    "name": "q_invoice_05_processor",
+    "query": "intel core i7 processor tech retailers",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_05_SkyNet.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Intel Core i7 Processor"
+    ]
+  },
+  {
+    "name": "q_invoice_05_supplier",
+    "query": "invoice from skynet solutions llp for tech retailers",
+    "query_type": "invoice_supplier_buyer",
+    "expected_source_filename": "GST_Invoice_05_SkyNet.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "SkyNet Solutions LLP",
+      "Tech Retailers Pvt. Ltd."
+    ]
+  },
+  {
+    "name": "q_invoice_06_hp_laptop",
+    "query": "hp pavilion laptop delhi enterprises invoice",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_06_Nova.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "HP Pavilion Laptop"
+    ]
+  },
+  {
+    "name": "q_invoice_06_total",
+    "query": "grand total 1129173.92",
+    "query_type": "invoice_total",
+    "expected_source_filename": "GST_Invoice_06_Nova.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "1,129,173.92"
+    ]
+  },
+  {
+    "name": "q_invoice_07_cloud_hosting",
+    "query": "annual cloud hosting bangalore tech solutions",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_07_ElectroHub.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Annual Cloud Hosting"
+    ]
+  },
+  {
+    "name": "q_invoice_07_server_rack",
+    "query": "server rack 42u electrohub bangalore",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_07_ElectroHub.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Server Rack 42U"
+    ]
+  },
+  {
+    "name": "q_invoice_08_mouse",
+    "query": "logitech wireless mouse chennai digital traders",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_08_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Logitech Wireless Mouse"
+    ]
+  },
+  {
+    "name": "q_invoice_08_cloud",
+    "query": "annual cloud hosting invoice TF/2026-27/008",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_08_TechForge.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Annual Cloud Hosting"
+    ]
+  },
+  {
+    "name": "q_invoice_09_software",
+    "query": "software development services hyderabad it hub",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_09_ElectroHub.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Software Development Services"
+    ]
+  },
+  {
+    "name": "q_invoice_09_total",
+    "query": "grand total 735554.40",
+    "query_type": "invoice_total",
+    "expected_source_filename": "GST_Invoice_09_ElectroHub.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "735,554.40"
+    ]
+  },
+  {
+    "name": "q_invoice_10_cloud",
+    "query": "annual cloud hosting kolkata eastern impex",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_10_SkyNet.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Annual Cloud Hosting"
+    ]
+  },
+  {
+    "name": "q_invoice_10_lenovo",
+    "query": "lenovo thinkpad laptop skynet kolkata",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "GST_Invoice_10_SkyNet.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Lenovo ThinkPad Laptop"
+    ]
+  },
+  {
+    "name": "q_bom_01_product",
+    "query": "premium laptop assembly bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "BOM_01_TF-LAP-001.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Premium Laptop Assembly",
+      "TF-LAP-001"
+    ]
+  },
+  {
+    "name": "q_bom_01_part_code",
+    "query": "find part number for motherboard in premium laptop assembly",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_01_TF-LAP-001.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Motherboard",
+      "COMP-134"
+    ]
+  },
+  {
+    "name": "q_bom_02_psu",
+    "query": "which component uses part number COMP-686",
+    "query_type": "bom_part_lookup",
+    "expected_source_filename": "BOM_02_TF-SRV-002.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "PSU",
+      "COMP-686"
+    ]
+  },
+  {
+    "name": "q_bom_02_product",
+    "query": "enterprise server rack bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "BOM_02_TF-SRV-002.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Enterprise Server Rack",
+      "TF-SRV-002"
+    ]
+  },
+  {
+    "name": "q_bom_03_storage",
+    "query": "ssd hdd component in basic desktop pc kit",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_03_TF-DSK-003.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "SSD/HDD",
+      "COMP-167"
+    ]
+  },
+  {
+    "name": "q_bom_03_chassis",
+    "query": "chassis part number basic desktop pc kit",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_03_TF-DSK-003.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Chassis",
+      "COMP-459"
+    ]
+  },
+  {
+    "name": "q_bom_04_cooling_fan",
+    "query": "cooling fan part number in 24-port managed switch",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_04_TF-SW-004.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Cooling Fan",
+      "COMP-382"
+    ]
+  },
+  {
+    "name": "q_bom_04_psu",
+    "query": "find psu material code in TF-SW-004",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_04_TF-SW-004.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "PSU",
+      "COMP-298"
+    ]
+  },
+  {
+    "name": "q_bom_05_product",
+    "query": "smart office workstation bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "BOM_05_TF-WS-005.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Smart Office Workstation",
+      "TF-WS-005"
+    ]
+  },
+  {
+    "name": "q_bom_05_cooling_fan",
+    "query": "find part number for cooling fan in smart office workstation",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "BOM_05_TF-WS-005.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Cooling Fan",
+      "COMP-778"
+    ]
+  },
+  {
+    "name": "q_eway_01_ewb",
+    "query": "271234567890",
+    "query_type": "eway_number",
+    "expected_source_filename": "Eway_Bill_1.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "271234567890"
+    ]
+  },
+  {
+    "name": "q_eway_01_vehicle",
+    "query": "vehicle number for e-way bill TF/2026-27/001",
+    "query_type": "eway_vehicle",
+    "expected_source_filename": "Eway_Bill_1.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "MH02-AB-1234"
+    ]
+  },
+  {
+    "name": "q_eway_02_ewb",
+    "query": "271234567891",
+    "query_type": "eway_number",
+    "expected_source_filename": "Eway_Bill_2.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "271234567891"
+    ]
+  },
+  {
+    "name": "q_eway_02_destination",
+    "query": "new delhi e-way bill vehicle number",
+    "query_type": "eway_vehicle",
+    "expected_source_filename": "Eway_Bill_2.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "MH04-CD-5678",
+      "New Delhi"
+    ]
+  },
+  {
+    "name": "q_financial_balance_title",
+    "query": "balance sheet as on 31-mar-2026",
+    "query_type": "financial_statement",
+    "expected_source_filename": "Financial_1_Balance.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Balance Sheet as on 31-Mar-2026"
+    ]
+  },
+  {
+    "name": "q_financial_profit_pat",
+    "query": "profit after tax fy 2025-26",
+    "query_type": "financial_metric",
+    "expected_source_filename": "Financial_2_Profit.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Profit After Tax",
+      "6,50,000"
+    ]
+  },
+  {
+    "name": "q_financial_profit_revenue",
+    "query": "revenue from operations 4850000",
+    "query_type": "financial_metric",
+    "expected_source_filename": "Financial_2_Profit.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Revenue from Operations",
+      "48,50,000"
+    ]
+  },
+  {
+    "name": "q_financial_cash_increase",
+    "query": "net increase in cash",
+    "query_type": "financial_metric",
+    "expected_source_filename": "Financial_3_Cash.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Net Increase in Cash",
+      "5,50,000"
+    ]
+  },
+  {
+    "name": "q_financial_cash_operating",
+    "query": "net cash from operating activities",
+    "query_type": "financial_metric",
+    "expected_source_filename": "Financial_3_Cash.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Net Cash from Operating Activities",
+      "7,20,000"
+    ]
+  }
+]

@@ -1,0 +1,345 @@
+[
+  {
+    "name": "fm_gst_2026_2001",
+    "supplier": "Asterion Drive Systems Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_01.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2001",
+      "supplier_name": "Asterion Drive Systems Pvt Ltd",
+      "buyer_name": "Helios Auto Modules Pvt Ltd",
+      "doc_date": "10-Apr-2026",
+      "amount": 452648.0,
+      "po_number": "PO-FM-7600",
+      "payment_terms": "15 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2002",
+    "supplier": "BriskVolt Mobility Components LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_02.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2002",
+      "supplier_name": "BriskVolt Mobility Components LLP",
+      "buyer_name": "NovaTorque EV Manufacturing Ltd",
+      "doc_date": "11-Apr-2026",
+      "amount": 370520.0,
+      "po_number": "PO-FM-7601",
+      "payment_terms": "30 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2003",
+    "supplier": "Crestline Fabrication Works Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_03.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2003",
+      "supplier_name": "Crestline Fabrication Works Pvt Ltd",
+      "buyer_name": "Saffron Mobility Assembly Park",
+      "doc_date": "12-Apr-2026",
+      "amount": 237899.8,
+      "po_number": "PO-FM-7602",
+      "payment_terms": "45 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2004",
+    "supplier": "Dynorail Precision India Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_04.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2004",
+      "supplier_name": "Dynorail Precision India Pvt Ltd",
+      "buyer_name": "BluePeak Fleet Services Ltd",
+      "doc_date": "13-Apr-2026",
+      "amount": 339663.0,
+      "po_number": "PO-FM-7603",
+      "payment_terms": "60 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2005",
+    "supplier": "Elara Industrial Plastics Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_05.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2005",
+      "supplier_name": "Elara Industrial Plastics Pvt Ltd",
+      "buyer_name": "Vertex Transit Components Pvt Ltd",
+      "doc_date": "14-Apr-2026",
+      "amount": 104784.0,
+      "po_number": "PO-FM-7604",
+      "payment_terms": "15 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2006",
+    "supplier": "ForgePeak Thermal Systems LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_06.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2006",
+      "supplier_name": "ForgePeak Thermal Systems LLP",
+      "buyer_name": "Aquila Industrial Controls Ltd",
+      "doc_date": "15-Apr-2026",
+      "amount": 335167.2,
+      "po_number": "PO-FM-7605",
+      "payment_terms": "30 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2007",
+    "supplier": "GlintAxis Electronics Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_07.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2007",
+      "supplier_name": "GlintAxis Electronics Pvt Ltd",
+      "buyer_name": "Trionix Mobility Platforms Pvt Ltd",
+      "doc_date": "16-Apr-2026",
+      "amount": 266644.6,
+      "po_number": "PO-FM-7606",
+      "payment_terms": "45 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2008",
+    "supplier": "HexaMotion Castings Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_08.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2008",
+      "supplier_name": "HexaMotion Castings Pvt Ltd",
+      "buyer_name": "Eastern Drivetrain Consortium",
+      "doc_date": "17-Apr-2026",
+      "amount": 120655.0,
+      "po_number": "PO-FM-7607",
+      "payment_terms": "60 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2009",
+    "supplier": "IonGrid Warehouse Solutions LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_09.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2009",
+      "supplier_name": "IonGrid Warehouse Solutions LLP",
+      "buyer_name": "Pioneer Road Systems Ltd",
+      "doc_date": "18-Apr-2026",
+      "amount": 429520.0,
+      "po_number": "PO-FM-7608",
+      "payment_terms": "15 Days"
+    }
+  },
+  {
+    "name": "fm_gst_2026_2010",
+    "supplier": "Jovian Fleet Tech Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_GST_Invoice_10.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2010",
+      "supplier_name": "Jovian Fleet Tech Pvt Ltd",
+      "buyer_name": "Summit Vehicle Interiors Pvt Ltd",
+      "doc_date": "19-Apr-2026",
+      "amount": 548641.0,
+      "po_number": "PO-FM-7609",
+      "payment_terms": "30 Days"
+    }
+  },
+  {
+    "name": "fm_bom_2026_3101",
+    "supplier": "KineticRidge Assemblies Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_BOM_01.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "FM-BOM-2026-3101",
+      "supplier_name": "KineticRidge Assemblies Pvt Ltd",
+      "part_number": "KR-ASM-4401",
+      "revision": "R3",
+      "plant_code": "PUNE-TRIM-01",
+      "product": "Electric Chassis Sub Assembly"
+    },
+    "expected_line_items": [
+      {
+        "part_number": "KR-CH-201",
+        "description": "Floor Tunnel Stamping"
+      },
+      {
+        "part_number": "KR-CH-224",
+        "description": "Rear Torsion Beam"
+      },
+      {
+        "part_number": "KR-CH-238",
+        "description": "Front Mount Bracket"
+      },
+      {
+        "part_number": "KR-CH-252",
+        "description": "Battery Tray Support"
+      }
+    ]
+  },
+  {
+    "name": "fm_bom_2026_3102",
+    "supplier": "Lumina Rack Infrastructure LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_BOM_02.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "FM-BOM-2026-3102",
+      "supplier_name": "Lumina Rack Infrastructure LLP",
+      "part_number": "LR-ASM-6102",
+      "revision": "B2",
+      "plant_code": "BLR-WH-04",
+      "product": "Warehouse Rack Frame Assembly"
+    },
+    "expected_line_items": [
+      {
+        "part_number": "LR-RK-310",
+        "description": "Rack Upright 2400mm"
+      },
+      {
+        "part_number": "LR-RK-322",
+        "description": "Load Beam 1800mm"
+      },
+      {
+        "part_number": "LR-RK-345",
+        "description": "Decking Panel"
+      },
+      {
+        "part_number": "LR-RK-351",
+        "description": "Base Plate Assembly"
+      }
+    ]
+  },
+  {
+    "name": "fm_bom_2026_3103",
+    "supplier": "Meraki Console Systems Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_BOM_03.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "FM-BOM-2026-3103",
+      "supplier_name": "Meraki Console Systems Pvt Ltd",
+      "part_number": "MC-ASM-7303",
+      "revision": "C1",
+      "plant_code": "AHM-CAB-02",
+      "product": "Driver Console Module"
+    },
+    "expected_line_items": [
+      {
+        "part_number": "MC-CS-110",
+        "description": "Console Main Frame"
+      },
+      {
+        "part_number": "MC-CS-122",
+        "description": "Switch Panel Insert"
+      },
+      {
+        "part_number": "MC-CS-146",
+        "description": "HVAC Vent Housing"
+      },
+      {
+        "part_number": "MC-CS-153",
+        "description": "Storage Bin Liner"
+      }
+    ]
+  },
+  {
+    "name": "fm_bom_2026_3104",
+    "supplier": "NorthArc Network Hardware Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_BOM_04.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "FM-BOM-2026-3104",
+      "supplier_name": "NorthArc Network Hardware Pvt Ltd",
+      "part_number": "NA-ASM-8404",
+      "revision": "R5",
+      "plant_code": "CHN-ELX-03",
+      "product": "Managed Network Switch"
+    },
+    "expected_line_items": [
+      {
+        "part_number": "NA-NH-410",
+        "description": "24 Port Main PCB"
+      },
+      {
+        "part_number": "NA-NH-432",
+        "description": "Cooling Fan Module"
+      },
+      {
+        "part_number": "NA-NH-458",
+        "description": "Power Supply Unit"
+      },
+      {
+        "part_number": "NA-NH-472",
+        "description": "RJ45 Shield Cage"
+      }
+    ]
+  },
+  {
+    "name": "fm_bom_2026_3105",
+    "supplier": "Orbis Seating Technologies LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_BOM_05.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "FM-BOM-2026-3105",
+      "supplier_name": "Orbis Seating Technologies LLP",
+      "part_number": "OR-ASM-9505",
+      "revision": "D4",
+      "plant_code": "FBD-TRIM-09",
+      "product": "Premium Seating Module"
+    },
+    "expected_line_items": [
+      {
+        "part_number": "OR-ST-510",
+        "description": "Seat Frame Base"
+      },
+      {
+        "part_number": "OR-ST-536",
+        "description": "Seat Foam Cushion"
+      },
+      {
+        "part_number": "OR-ST-548",
+        "description": "Seat Back Foam"
+      },
+      {
+        "part_number": "OR-ST-562",
+        "description": "Trim Cover Fabric"
+      }
+    ]
+  },
+  {
+    "name": "381245670001",
+    "supplier": "PrimeSpan Logistics Interfaces Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_Eway_01.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2001",
+      "supplier_name": "PrimeSpan Logistics Interfaces Pvt Ltd",
+      "amount": 417072.0
+    }
+  },
+  {
+    "name": "381245670002",
+    "supplier": "QuantaForge Cab Systems Pvt Ltd",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_Eway_02.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2006",
+      "supplier_name": "QuantaForge Cab Systems Pvt Ltd",
+      "amount": 350048.4
+    }
+  },
+  {
+    "name": "381245670003",
+    "supplier": "RivetBridge Dispatch Solutions LLP",
+    "file": "D:/python/RAG/golden_set/final_metrics/pdfs/FM_Eway_03.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "FM-GST-2026-2010",
+      "supplier_name": "RivetBridge Dispatch Solutions LLP",
+      "amount": 506514.0
+    }
+  }
+]

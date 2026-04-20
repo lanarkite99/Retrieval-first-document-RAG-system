@@ -1,0 +1,392 @@
+[
+  {
+    "name": "q_fm_invoice_01_number",
+    "query": "FM-GST-2026-2001",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_01.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2001",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2001"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_01_item",
+    "query": "Traction Inverter Assembly invoice asterion",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_01.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Traction",
+      "Assembly"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_02_number",
+    "query": "FM-GST-2026-2002",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_02.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2002",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2002"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_02_item",
+    "query": "Battery Pack Compression Rail invoice briskvolt",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_02.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Battery",
+      "Rail"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_03_number",
+    "query": "FM-GST-2026-2003",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_03.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2003",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2003"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_03_item",
+    "query": "Front Subframe Cross Member invoice crestline",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_03.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Front",
+      "Member"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_04_number",
+    "query": "FM-GST-2026-2004",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_04.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2004",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2004"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_04_item",
+    "query": "Telematics Control Unit invoice dynorail",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_04.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Telematics",
+      "Unit"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_05_number",
+    "query": "FM-GST-2026-2005",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_05.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2005",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2005"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_05_item",
+    "query": "Air Intake Resonator invoice elara",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_05.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Air",
+      "Resonator"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_06_number",
+    "query": "FM-GST-2026-2006",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_06.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2006",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2006"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_06_item",
+    "query": "Heat Exchanger Core invoice forgepeak",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_06.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Heat",
+      "Core"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_07_number",
+    "query": "FM-GST-2026-2007",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_07.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2007",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2007"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_07_item",
+    "query": "Cluster Display Assembly invoice glintaxis",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_07.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Cluster",
+      "Assembly"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_08_number",
+    "query": "FM-GST-2026-2008",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_08.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2008",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2008"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_08_item",
+    "query": "Suspension Control Arm invoice hexamotion",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_08.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Suspension",
+      "Arm"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_09_number",
+    "query": "FM-GST-2026-2009",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_09.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2009",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2009"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_09_item",
+    "query": "Warehouse Racking Upright invoice iongrid",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_09.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Warehouse",
+      "Upright"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_10_number",
+    "query": "FM-GST-2026-2010",
+    "query_type": "invoice_number",
+    "expected_source_filename": "FM_GST_Invoice_10.pdf",
+    "expected_page": 1,
+    "expected_doc_truth": "FM-GST-2026-2010",
+    "expected_snippet_contains": [
+      "FM-GST-2026-2010"
+    ]
+  },
+  {
+    "name": "q_fm_invoice_10_item",
+    "query": "Fleet Gateway ECU invoice jovian",
+    "query_type": "invoice_line_item",
+    "expected_source_filename": "FM_GST_Invoice_10.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Fleet",
+      "ECU"
+    ]
+  },
+  {
+    "name": "q_fm_bom_01_product",
+    "query": "Electric Chassis Sub Assembly bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "FM_BOM_01.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Electric",
+      "KR-ASM-4401"
+    ]
+  },
+  {
+    "name": "q_fm_bom_01_component",
+    "query": "part number for Rear Torsion Beam",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "FM_BOM_01.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Rear",
+      "KR-CH-224"
+    ]
+  },
+  {
+    "name": "q_fm_bom_02_product",
+    "query": "Warehouse Rack Frame Assembly bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "FM_BOM_02.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Warehouse",
+      "LR-ASM-6102"
+    ]
+  },
+  {
+    "name": "q_fm_bom_02_component",
+    "query": "part number for Load Beam 1800mm",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "FM_BOM_02.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Load",
+      "LR-RK-322"
+    ]
+  },
+  {
+    "name": "q_fm_bom_03_product",
+    "query": "Driver Console Module bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "FM_BOM_03.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Driver",
+      "MC-ASM-7303"
+    ]
+  },
+  {
+    "name": "q_fm_bom_03_component",
+    "query": "part number for Switch Panel Insert",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "FM_BOM_03.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Switch",
+      "MC-CS-122"
+    ]
+  },
+  {
+    "name": "q_fm_bom_04_product",
+    "query": "Managed Network Switch bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "FM_BOM_04.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Managed",
+      "NA-ASM-8404"
+    ]
+  },
+  {
+    "name": "q_fm_bom_04_component",
+    "query": "part number for Cooling Fan Module",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "FM_BOM_04.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Cooling",
+      "NA-NH-432"
+    ]
+  },
+  {
+    "name": "q_fm_bom_05_product",
+    "query": "Premium Seating Module bom",
+    "query_type": "bom_product",
+    "expected_source_filename": "FM_BOM_05.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Premium",
+      "OR-ASM-9505"
+    ]
+  },
+  {
+    "name": "q_fm_bom_05_component",
+    "query": "part number for Seat Foam Cushion",
+    "query_type": "bom_component_lookup",
+    "expected_source_filename": "FM_BOM_05.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "Seat",
+      "OR-ST-536"
+    ]
+  },
+  {
+    "name": "q_fm_eway_01_number",
+    "query": "381245670001",
+    "query_type": "eway_number",
+    "expected_source_filename": "FM_Eway_01.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "381245670001"
+    ]
+  },
+  {
+    "name": "q_fm_eway_01_vehicle",
+    "query": "vehicle number for e-way bill FM-GST-2026-2001",
+    "query_type": "eway_vehicle",
+    "expected_source_filename": "FM_Eway_01.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "MH14-GH-4211"
+    ]
+  },
+  {
+    "name": "q_fm_eway_02_number",
+    "query": "381245670002",
+    "query_type": "eway_number",
+    "expected_source_filename": "FM_Eway_02.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "381245670002"
+    ]
+  },
+  {
+    "name": "q_fm_eway_02_vehicle",
+    "query": "vehicle number for e-way bill FM-GST-2026-2006",
+    "query_type": "eway_vehicle",
+    "expected_source_filename": "FM_Eway_02.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "DL1L-ZT-9088"
+    ]
+  },
+  {
+    "name": "q_fm_eway_03_number",
+    "query": "381245670003",
+    "query_type": "eway_number",
+    "expected_source_filename": "FM_Eway_03.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "381245670003"
+    ]
+  },
+  {
+    "name": "q_fm_eway_03_vehicle",
+    "query": "vehicle number for e-way bill FM-GST-2026-2010",
+    "query_type": "eway_vehicle",
+    "expected_source_filename": "FM_Eway_03.pdf",
+    "expected_page": 1,
+    "expected_snippet_contains": [
+      "WB23-AX-1164"
+    ]
+  }
+]

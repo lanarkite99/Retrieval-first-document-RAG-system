@@ -1,0 +1,65 @@
+[
+  {
+    "name": "sample_invoice_pdf",
+    "supplier": "ACB LED solutions",
+    "file": "data/1.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "2343-AB-34",
+      "supplier_name": "ACB LED solutions",
+      "buyer_name": "Nadim Khan",
+      "amount": 10499.98
+    },
+    "expected_extra_fields": {}
+  },
+  {
+    "name": "sample_gst_invoice_pdf",
+    "supplier": "ElectroMart India",
+    "file": "data/GST_Invoice_INV-202604-1001.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "INV-202604-1001",
+      "supplier_name": "ElectroMart India",
+      "buyer_name": "GreenField Retail Ltd",
+      "amount": 87241.64
+    },
+    "expected_extra_fields": {}
+  },
+  {
+    "name": "sample_bom_text",
+    "supplier": "Vertex Components",
+    "text": "BILL OF MATERIAL\nBOM Number: BOM-AXLE-2207\nManufacturer: Vertex Components\nAssembly Number: ASM-7788-Z\nRev: C3\nEffective Date: 2026-04-01\nPlant Code: Pune-02\nCustomer Ref: RFQ-99881\nCoating Spec: Zinc Nickel\nItem No  Part No      Description              Qty   UOM   Rev   Remarks\n10       BRK-221      Brake Caliper Assembly  2     Nos   C3    Machined\n20       PIP-998      Hydraulic Pipe          4     Nos   B1    Zinc coated",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "BOM-AXLE-2207",
+      "supplier_name": "Vertex Components",
+      "part_number": "ASM-7788-Z",
+      "revision": "C3",
+      "plant_code": "Pune-02"
+    },
+    "expected_extra_fields": {
+      "customer ref": "RFQ-99881",
+      "coating spec": "Zinc Nickel"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "10",
+        "part_number": "BRK-221",
+        "description": "Brake Caliper Assembly",
+        "quantity": 2,
+        "unit": "Nos",
+        "revision": "C3",
+        "remarks": "Machined"
+      },
+      {
+        "item_no": "20",
+        "part_number": "PIP-998",
+        "description": "Hydraulic Pipe",
+        "quantity": 4,
+        "unit": "Nos",
+        "revision": "B1",
+        "remarks": "Zinc coated"
+      }
+    ]
+  }
+]

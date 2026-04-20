@@ -1,0 +1,93 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: factory-rag-app:latest
+    container_name: factory_rag_api
+    depends_on:
+      - postgres
+      - qdrant
+      - redis
+      - opensearch
+    environment:
+      RAG_POSTGRES_DSN: postgresql://rag:ragpass@postgres:5432/ragdb
+      RAG_QDRANT_URL: http://qdrant:6333
+      RAG_OPENSEARCH_URL: http://opensearch:9200
+      RAG_REDIS_URL: redis://redis:6379/0
+      RAG_STORAGE_DIR: /app/storage
+      RAG_DATA_DIR: /app/data
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      RAG_LLM_BACKEND: ${RAG_LLM_BACKEND:-gemini}
+      RAG_LLM_MODEL: ${RAG_LLM_MODEL:-gemini-2.5-flash}
+      RAG_EMBEDDING_BACKEND: ${RAG_EMBEDDING_BACKEND:-sentence-transformer}
+      RAG_EMBEDDING_MODEL: ${RAG_EMBEDDING_MODEL:-BAAI/bge-small-en-v1.5}
+      RAG_ENABLE_SUMMARY: ${RAG_ENABLE_SUMMARY:-1}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./golden_set:/app/golden_set
+      - ./storage:/app/storage
+
+  streamlit:
+    image: factory-rag-app:latest
+    container_name: factory_rag_streamlit
+    depends_on:
+      - api
+    environment:
+      FACTORY_RAG_API_URL: http://api:8000
+    command:
+      - streamlit
+      - run
+      - apps/streamlit_app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+    ports:
+      - "8501:8501"
+
+  postgres:
+    image: postgres:16
+    container_name: rag_postgres
+    environment:
+      POSTGRES_DB: ragdb
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: ragpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: rag_qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  redis:
+    image: redis:7-alpine
+    container_name: rag_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  opensearch:
+    image: opensearchproject/opensearch:2
+    container_name: rag_opensearch
+    environment:
+      discovery.type: single-node
+      DISABLE_SECURITY_PLUGIN: "true"
+      OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - os_data:/usr/share/opensearch/data
+
+volumes:
+  pg_data:
+  qdrant_data:
+  redis_data:
+  os_data:

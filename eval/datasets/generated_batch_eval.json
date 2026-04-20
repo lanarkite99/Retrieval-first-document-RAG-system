@@ -1,0 +1,250 @@
+[
+  {
+    "name": "gst_inv_2026_1001",
+    "supplier": "Shakti Auto Parts Pvt Ltd",
+    "file": "data/generated_batch/gst_invoice_batch_1001.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1001",
+      "supplier_name": "Shakti Auto Parts Pvt Ltd",
+      "buyer_name": "Falcon Motors Plant 2",
+      "amount": 52439.2,
+      "po_number": "PO-78001",
+      "payment_terms": "30 Days"
+    },
+    "expected_extra_fields": {
+      "dispatch mode": "Road"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1002",
+    "supplier": "Vertex Industrial Supply",
+    "file": "data/generated_batch/gst_invoice_batch_1002.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1002",
+      "supplier_name": "Vertex Industrial Supply",
+      "buyer_name": "Nexa Drive Assembly Unit",
+      "amount": 41686.0,
+      "po_number": "PO-78002",
+      "payment_terms": "45 Days"
+    },
+    "expected_extra_fields": {
+      "vehicle no": "KA01AB4455"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1003",
+    "supplier": "PrimeFab Components LLP",
+    "file": "data/generated_batch/gst_invoice_batch_1003.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1003",
+      "supplier_name": "PrimeFab Components LLP",
+      "buyer_name": "Trident EV Manufacturing",
+      "amount": 66740.8,
+      "po_number": "PO-78003",
+      "payment_terms": "15 Days"
+    },
+    "expected_extra_fields": {
+      "e-way bill": "EWB99887766"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1004",
+    "supplier": "Apex Motion Systems",
+    "file": "data/generated_batch/gst_invoice_batch_1004.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1004",
+      "supplier_name": "Apex Motion Systems",
+      "buyer_name": "Falcon Motors Plant 2",
+      "amount": 49866.8,
+      "po_number": "PO-78004",
+      "payment_terms": "Advance"
+    },
+    "expected_extra_fields": {
+      "plant code": "PUNE-02"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1005",
+    "supplier": "Shakti Auto Parts Pvt Ltd",
+    "file": "data/generated_batch/gst_invoice_batch_1005.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1005",
+      "supplier_name": "Shakti Auto Parts Pvt Ltd",
+      "buyer_name": "Trident EV Manufacturing",
+      "amount": 34998.8,
+      "po_number": "PO-78005",
+      "payment_terms": "21 Days"
+    },
+    "expected_extra_fields": {
+      "transporter": "SafeHaul Logistics"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1006",
+    "supplier": "Vertex Industrial Supply",
+    "file": "data/generated_batch/gst_invoice_batch_1006.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1006",
+      "supplier_name": "Vertex Industrial Supply",
+      "buyer_name": "Nexa Drive Assembly Unit",
+      "amount": 50958.3,
+      "po_number": "PO-78006",
+      "payment_terms": "30 Days"
+    },
+    "expected_extra_fields": {
+      "warehouse": "BLR-RAW-01"
+    }
+  },
+  {
+    "name": "gst_inv_2026_1007",
+    "supplier": "PrimeFab Components LLP",
+    "file": "data/generated_batch/gst_invoice_batch_1007.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "GST-INV-2026-1007",
+      "supplier_name": "PrimeFab Components LLP",
+      "buyer_name": "Falcon Motors Plant 2",
+      "amount": 57076.6,
+      "po_number": "PO-78007",
+      "payment_terms": "60 Days"
+    },
+    "expected_extra_fields": {
+      "inspection ref": "IR-4412"
+    }
+  },
+  {
+    "name": "bom_chassis_2001",
+    "supplier": "Shakti Auto Parts Pvt Ltd",
+    "file": "data/generated_batch/bom_batch_2001.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "BOM-CHASSIS-2001",
+      "supplier_name": "Shakti Auto Parts Pvt Ltd",
+      "part_number": "ASM-CH-2001-A",
+      "revision": "R2",
+      "plant_code": "PUNE-02"
+    },
+    "expected_extra_fields": {
+      "coating spec": "Powder Coat Black"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "10",
+        "part_number": "CH-110",
+        "description": "Cross Member Front",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Welded"
+      },
+      {
+        "item_no": "20",
+        "part_number": "CH-120",
+        "description": "Side Rail Left",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Laser Cut"
+      },
+      {
+        "item_no": "30",
+        "part_number": "CH-121",
+        "description": "Side Rail Right",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Laser Cut"
+      }
+    ]
+  },
+  {
+    "name": "bom_door_2002",
+    "supplier": "Vertex Industrial Supply",
+    "file": "data/generated_batch/bom_batch_2002.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "BOM-DOOR-2002",
+      "supplier_name": "Vertex Industrial Supply",
+      "part_number": "DR-ASM-4401",
+      "revision": "B4",
+      "plant_code": "BLR-01"
+    },
+    "expected_extra_fields": {
+      "customer ref": "RFQ-DOOR-91"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "DR-201",
+        "description": "Outer Door Panel",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Stamped"
+      },
+      {
+        "item_no": "2",
+        "part_number": "DR-202",
+        "description": "Inner Door Panel",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Stamped"
+      },
+      {
+        "item_no": "3",
+        "part_number": "DR-310",
+        "description": "Window Channel",
+        "quantity": 2,
+        "unit": "Nos",
+        "remarks": "Rolled"
+      }
+    ]
+  },
+  {
+    "name": "bom_seat_2003",
+    "supplier": "Apex Motion Systems",
+    "file": "data/generated_batch/bom_batch_2003.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "BOM-SEAT-2003",
+      "supplier_name": "Apex Motion Systems",
+      "part_number": "ST-ASM-7782",
+      "revision": "C1",
+      "plant_code": "CHN-03"
+    },
+    "expected_extra_fields": {
+      "process route": "Cutting > Stitching > Assembly"
+    },
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "ST-410",
+        "description": "Seat Frame Base",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Powder Coat",
+        "revision": "C1"
+      },
+      {
+        "item_no": "2",
+        "part_number": "ST-520",
+        "description": "Seat Foam Cushion",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Molded",
+        "revision": "C1"
+      },
+      {
+        "item_no": "3",
+        "part_number": "ST-610",
+        "description": "Seat Cover Fabric",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Black Trim",
+        "revision": "C1"
+      }
+    ]
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "name": "generated_invoice_alias_pdf",
+    "supplier": "Apex Auto Components",
+    "file": "data\\generated_eval\\invoice_alias.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "INV-ALT-2001",
+      "supplier_name": "Apex Auto Components",
+      "buyer_name": "Falcon Motors Plant",
+      "amount": 45678.9,
+      "po_number": "PO-445500",
+      "payment_terms": "30 Days"
+    },
+    "expected_extra_fields": {
+      "dispatch mode": "Surface"
+    }
+  },
+  {
+    "name": "generated_invoice_split_pdf",
+    "supplier": "Prime Industrial Traders",
+    "file": "data\\generated_eval\\invoice_split.pdf",
+    "doc_type": "invoice",
+    "expected_fields": {
+      "doc_number": "INV-SPLIT-3001",
+      "supplier_name": "Prime Industrial Traders",
+      "buyer_name": "Nexa Assembly Unit 4",
+      "amount": 98765.4,
+      "currency": "INR"
+    },
+    "expected_extra_fields": {}
+  },
+  {
+    "name": "generated_bom_alias_pdf",
+    "supplier": "Delta Fabrication",
+    "file": "data\\generated_eval\\bom_alias.pdf",
+    "doc_type": "bom",
+    "expected_fields": {
+      "doc_number": "BOM-CHASSIS-9001",
+      "supplier_name": "Delta Fabrication",
+      "part_number": "CHS-9001-X",
+      "revision": "R4",
+      "plant_code": "Sanand-01"
+    },
+    "expected_extra_fields": {},
+    "expected_line_items": [
+      {
+        "item_no": "1",
+        "part_number": "ST-100",
+        "description": "Side Tube Left",
+        "quantity": 2,
+        "unit": "Nos",
+        "remarks": "Bent"
+      },
+      {
+        "item_no": "2",
+        "part_number": "ST-101",
+        "description": "Side Tube Right",
+        "quantity": 2,
+        "unit": "Nos",
+        "remarks": "Bent"
+      },
+      {
+        "item_no": "3",
+        "part_number": "CM-210",
+        "description": "Center Member",
+        "quantity": 1,
+        "unit": "Nos",
+        "remarks": "Welded"
+      }
+    ]
+  }
+]
