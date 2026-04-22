@@ -9,6 +9,10 @@ class IngestRequest(BaseModel):
     path: str
 
 
+class IngestInboxRequest(BaseModel):
+    force: bool = False
+
+
 class QueryRequest(BaseModel):
     query: str
     limit: int = Field(default=5, ge=1, le=20)
@@ -54,7 +58,24 @@ def metrics():
 @app.post("/documents/ingest", tags=["documents"])
 def ingest_documents(request: IngestRequest):
     runtime = get_runtime()
-    return {"results": runtime.ingestion_service.ingest_path(request.path)}
+    return _build_ingest_response(request.path, runtime.ingestion_service.ingest_path(request.path))
+
+
+@app.get("/documents/inbox", tags=["documents"])
+def get_ingest_inbox():
+    runtime = get_runtime()
+    return {
+        "path": str(runtime.settings.ingest_inbox_dir),
+        "description": "Configured shared inbox for bulk document ingestion.",
+    }
+
+
+@app.post("/documents/ingest/inbox", tags=["documents"])
+def ingest_inbox(request: IngestInboxRequest):
+    runtime = get_runtime()
+    inbox_path = str(runtime.settings.ingest_inbox_dir)
+    results = runtime.ingestion_service.ingest_path(inbox_path, force=request.force)
+    return _build_ingest_response(inbox_path, results)
 
 
 @app.get("/documents/{doc_id}", tags=["documents"])
@@ -97,6 +118,27 @@ def _build_find_response(response):
         result["more_matches"].append(_hit_to_find_result(hit))
 
     return result
+
+
+def _build_ingest_response(path, results):
+    summary = {
+        "processed": 0,
+        "duplicate": 0,
+        "partial": 0,
+        "failed": 0,
+    }
+
+    for item in results:
+        status = item.get("status")
+        if status in summary:
+            summary[status] += 1
+
+    return {
+        "path": path,
+        "total_files": len(results),
+        "summary": summary,
+        "results": results,
+    }
 
 
 def _hit_to_find_result(hit):

@@ -18,6 +18,7 @@ It is intentionally retrieval-first rather than parser-first. Structured extract
 ## Key Features
 
 - PDF ingestion from files or folders
+- Shared inbox ingestion workflow through API and Streamlit
 - Multi-store retrieval architecture with Postgres, OpenSearch, Qdrant, and Redis
 - Evidence chunking across text blocks, lines, table rows, and header fields
 - Query routing for exact identifier search, lexical lookup, and hybrid retrieval
@@ -163,6 +164,8 @@ To rebuild documents after chunking or indexing changes:
 python main.py ingest golden_set --force
 ```
 
+For the Streamlit and Docker deployment flow, the application also supports a configured inbox directory for bulk ingestion. Users can place PDFs in the inbox folder and trigger ingestion from the UI without entering filesystem paths manually.
+
 ## Usage
 
 ### CLI
@@ -203,6 +206,8 @@ Primary endpoints:
 - `GET /health`
 - `GET /metrics`
 - `POST /documents/ingest`
+- `GET /documents/inbox`
+- `POST /documents/ingest/inbox`
 - `GET /documents/{id}`
 - `POST /query`
 - `POST /find`
@@ -223,6 +228,12 @@ The UI surfaces the top match first and shows:
 - storage path
 - amount and supplier when available
 - evidence snippet or nearby context
+
+It also includes a simple document intake workflow:
+
+- users drop PDFs into the configured inbox folder
+- Streamlit triggers bulk ingestion through the API
+- the UI displays processed, duplicate, partial, and failed counts
 
 ## Evaluation
 
@@ -308,6 +319,7 @@ GEMINI_API_KEY=your_key_here
 RAG_ENABLE_SUMMARY=1
 RAG_STORAGE_DIR=storage
 RAG_DATA_DIR=data
+RAG_INGEST_INBOX=data/incoming
 ```
 
 Optional alternatives:
@@ -331,6 +343,27 @@ Then reingest:
 ```powershell
 python main.py ingest golden_set --force
 ```
+
+## Operational Ingestion Pattern
+
+The current repository supports two ingestion styles:
+
+- direct CLI or API ingestion by path
+- inbox-based ingestion for non-technical users
+
+The inbox workflow is the better operational fit for a small business team:
+
+- users drop PDFs into a shared `incoming` folder
+- the UI or API triggers bulk ingestion
+- duplicates are skipped using checksum-based deduplication
+
+For a more production-style setup, the recommended future design is:
+
+- `incoming/` for newly received files
+- `processed/` for successfully ingested files
+- `failed/` for files that need manual review
+- scheduled ingestion every few minutes or at a fixed daily time
+- persistent checksum and ingestion-state tracking rather than relying on folder dates
 
 ## Demo Data
 
@@ -364,6 +397,15 @@ python main.py evaluate eval/datasets/generated_batch_eval.json
 - extraction remains little weak across unseen layouts
 - financial statement retrieval is weaker than invoice retrieval
 - some BOM component questions still depend on better row-level evidence selection
+
+## Future Improvements
+
+- automated scheduled ingestion from a shared inbox folder
+- `incoming / processed / failed` folder lifecycle for cleaner operations
+- background ingestion jobs instead of long synchronous UI requests
+- ingestion manifests and richer operational reporting
+- OCR support for scanned documents
+- stronger financial statement retrieval and answer-bearing snippet selection
 
 ## License
 

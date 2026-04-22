@@ -7,6 +7,7 @@ import streamlit as st
 
 
 API_URL = os.getenv("FACTORY_RAG_API_URL", "http://localhost:8000")
+DEFAULT_INGEST_INBOX = os.getenv("FACTORY_RAG_INGEST_INBOX", "/app/data/incoming")
 
 
 def _snippet_widget_key(match, key_prefix):
@@ -28,25 +29,85 @@ st.set_page_config(
 )
 
 
+def _request_json(path, payload=None, method="GET", timeout=30):
+    data = None
+    headers = {}
+
+    if payload is not None:
+        data = json.dumps(payload).encode("utf-8")
+        headers["Content-Type"] = "application/json"
+
+    req = request.Request(
+        f"{API_URL}{path}",
+        data=data,
+        headers=headers,
+        method=method,
+    )
+
+    with request.urlopen(req, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
 def _run_find(query, limit, use_cache):
-    payload = json.dumps(
-        {
+    return _request_json(
+        "/find",
+        payload={
             "query": query,
             "limit": limit,
             "use_cache": use_cache,
-        }
-    ).encode("utf-8")
-
-    req = request.Request(
-        f"{API_URL}/find",
-        data=payload,
-        headers={"Content-Type": "application/json"},
+        },
         method="POST",
+        timeout=120,
     )
 
-    with request.urlopen(req, timeout=120) as response:
-        data = json.loads(response.read().decode("utf-8"))
-    return data
+
+def _get_ingest_inbox():
+    try:
+        response = _request_json("/documents/inbox", timeout=15)
+        return response.get("path") or DEFAULT_INGEST_INBOX
+    except Exception:
+        return DEFAULT_INGEST_INBOX
+
+
+def _run_ingest_inbox(force=False):
+    return _request_json(
+        "/documents/ingest/inbox",
+        payload={"force": force},
+        method="POST",
+        timeout=600,
+    )
+
+
+def _render_ingest_results(result):
+    if not result:
+        return
+
+    summary = result.get("summary") or {}
+    st.markdown("## Ingestion Summary")
+    metric_columns = st.columns(5)
+    metric_columns[0].metric("Files", result.get("total_files") or 0)
+    metric_columns[1].metric("Processed", summary.get("processed", 0))
+    metric_columns[2].metric("Duplicates", summary.get("duplicate", 0))
+    metric_columns[3].metric("Partial", summary.get("partial", 0))
+    metric_columns[4].metric("Failed", summary.get("failed", 0))
+    st.caption(f"Inbox folder: {result.get('path') or '-'}")
+
+    rows = []
+    for item in result.get("results") or []:
+        rows.append(
+            {
+                "status": item.get("status"),
+                "file": item.get("source_filename"),
+                "doc_type": item.get("doc_type"),
+                "doc_number": item.get("doc_number"),
+                "chunks": item.get("chunks"),
+                "error": item.get("error"),
+            }
+        )
+
+    if rows:
+        with st.expander("View Ingestion Results", expanded=False):
+            st.dataframe(rows, use_container_width=True)
 
 
 def _render_match(match, title, key_prefix):
@@ -100,16 +161,40 @@ def main():
     st.title("Factory Document Search")
     st.caption("Search invoices, BOMs, e-way bills, and financial documents by number, amount, supplier, item, or material code.")
 
+    if "ingest_result" not in st.session_state:
+        st.session_state["ingest_result"] = None
+
     with st.sidebar:
         st.header("Search Options")
         limit = st.slider("Matches", min_value=1, max_value=10, value=5)
         use_cache = st.toggle("Use cache", value=True)
         st.caption(f"API: {API_URL}")
+        st.divider()
+        st.header("Document Intake")
+        ingest_inbox_path = _get_ingest_inbox()
+        st.caption("Drop PDFs into the shared inbox folder, then trigger bulk ingestion.")
+        st.code(ingest_inbox_path, language="text")
+        force_reingest = st.toggle(
+            "Force reingest",
+            value=False,
+            help="Rebuild already ingested PDFs from the inbox folder.",
+        )
+        if st.button("Ingest Inbox Folder", use_container_width=True):
+            try:
+                with st.spinner("Ingesting documents from inbox..."):
+                    st.session_state["ingest_result"] = _run_ingest_inbox(force=force_reingest)
+            except error.HTTPError as exc:
+                st.error(f"Ingestion API error: {exc.code}")
+            except Exception as exc:
+                st.error(f"Could not start ingestion: {exc}")
         st.markdown("**Examples**")
         st.markdown("- `TF/2026-27/001`")
         st.markdown("- `annual cloud hosting invoice`")
         st.markdown("- `find me material code for Seat Foam Cushion`")
         st.markdown("- `vehicle number for e-way bill TF/2026-27/001`")
+
+    if st.session_state.get("ingest_result"):
+        _render_ingest_results(st.session_state["ingest_result"])
 
     query = st.text_input("Search", placeholder="Enter invoice number, supplier, amount, item, or material code")
 
@@ -147,3 +232,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

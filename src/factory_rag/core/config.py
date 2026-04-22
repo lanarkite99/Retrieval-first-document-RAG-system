@@ -44,9 +44,12 @@ class Settings:
         self.cache_ttl_seconds = int(os.getenv("RAG_CACHE_TTL_SECONDS", "600"))
         self.storage_dir = Path(os.getenv("RAG_STORAGE_DIR", BASE_DIR / "storage"))
         self.data_dir = Path(os.getenv("RAG_DATA_DIR", BASE_DIR / "data"))
+        self.ingest_inbox_dir = Path(os.getenv("RAG_INGEST_INBOX", self.data_dir / "incoming"))
 
     def ensure_dirs(self):
         self.storage_dir.mkdir(parents=True, exist_ok=True)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.ingest_inbox_dir.mkdir(parents=True, exist_ok=True)
 
 
 settings = Settings()

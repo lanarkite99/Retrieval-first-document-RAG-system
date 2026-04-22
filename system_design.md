@@ -37,6 +37,7 @@ The current system is designed to:
 ### 2.2 Explicitly in Scope Today
 
 - local-first document ingestion
+- inbox-based bulk ingestion through Streamlit and API
 - native-text PDF extraction
 - lightweight document classification
 - metadata extraction with small canonical schema plus flexible extras
@@ -49,7 +50,7 @@ The current system is designed to:
 - local Docker Compose deployment
 - benchmark and unit test support
 
-### 2.3 Further improvements
+### 2.3 Further Improvements
 
 - OCR-first scanned-document pipelines
 - universal structured extraction across arbitrary formats
@@ -215,6 +216,12 @@ flowchart TD
     L --> M
 ```
 
+The same ingestion pipeline can be triggered in three ways:
+
+- CLI path-based ingestion
+- general API path-based ingestion
+- configured inbox ingestion through `POST /documents/ingest/inbox`
+
 ### 6.2 PDF Extraction
 
 Implemented behavior:
@@ -271,6 +278,29 @@ At ingestion time the system:
 - returns `duplicate` unless `--force` is used
 
 If `force` is used, vector and keyword indexes are rebuilt for that document.
+
+### 6.7 Current Inbox Workflow
+
+The current UI-facing operational ingestion path uses a configured inbox directory:
+
+- users place PDFs into a shared inbox folder
+- Streamlit calls the inbox ingestion API
+- the backend bulk-processes every PDF in that folder
+- checksum deduplication prevents reprocessing of identical files
+
+This design is intentionally simple and works well for a small office environment where users do not interact with the CLI or filesystem paths directly.
+
+### 6.8 Recommended Production-Style Ingestion Improvement
+
+The recommended next operational step is to evolve the current inbox flow into a scheduled ingestion pipeline with folder lifecycle management:
+
+- `incoming/` for new files
+- `processed/` for successful ingests
+- `failed/` for files needing review
+- scheduled execution every few minutes or at a fixed daily time
+- persistent checksum-based deduplication and ingestion manifest tracking
+
+This is preferable to “ingest by date placed in folder” because file timestamps are fragile, while checksum and ingestion-state tracking are durable and idempotent.
 
 ---
 
@@ -579,6 +609,13 @@ This deployment is appropriate for:
 - a demo environment
 - a small business team with a single shared machine
 
+In that environment, a practical operational model is:
+
+- one office machine runs Docker Compose
+- users save PDFs into a shared folder mounted into the API container
+- the inbox API or scheduled job ingests new files
+- users search through Streamlit in a browser
+
 It is not yet optimized for distributed production infrastructure.
 
 ---
@@ -610,6 +647,8 @@ The API provides:
 - service health
 - metrics
 - document ingestion
+- inbox discovery
+- inbox-based bulk ingestion
 - document lookup
 - verbose search
 - concise search
@@ -621,6 +660,7 @@ The concise search endpoint is `POST /find`, designed for UI and business-facing
 The Streamlit app is intentionally thin. It delegates retrieval to the API and focuses on:
 
 - one search box
+- inbox-triggered document intake
 - top match display
 - additional matches
 - clear file/page/snippet presentation
@@ -757,7 +797,9 @@ The most valuable next improvements are:
 3. add saved evaluation reports in JSON/CSV
 4. add OCR support for scanned PDFs
 5. expand benchmark coverage with more unseen supplier formats
-6. optionally add selective low-confidence extraction fallback with an LLM, while preserving retrieval-first architecture
+6. add scheduled inbox ingestion with `incoming / processed / failed` folders
+7. move long-running ingestion to an asynchronous job model
+8. optionally add selective low-confidence extraction fallback with an LLM, while preserving retrieval-first architecture
 
 ---
 
@@ -782,4 +824,3 @@ For someone new to the repository, a practical code-reading order is:
 15. `eval/` and `tests/`
 
 ---
-

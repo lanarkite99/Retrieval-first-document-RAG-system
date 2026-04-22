@@ -3,18 +3,24 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app/src
+ENV UV_LINK_MODE=copy
+ENV UV_PROJECT_ENVIRONMENT=/usr/local
+ENV UV_HTTP_TIMEOUT=120
 
 WORKDIR /app
 
-COPY pyproject.toml README.md ./
+RUN pip install --upgrade pip uv
+
+COPY pyproject.toml uv.lock ./
+
+RUN uv sync --no-dev --no-install-project
+
 COPY src ./src
-
-RUN pip install --no-cache-dir --upgrade pip &&     pip install --no-cache-dir .
-
 COPY eval ./eval
 COPY apps ./apps
 COPY scripts ./scripts
 COPY main.py ./
+COPY README.md ./
 
 EXPOSE 8000
 
