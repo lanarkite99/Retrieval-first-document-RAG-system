@@ -2,6 +2,8 @@
 
 Retrieval-first document search system for factory and operations workflows, designed for GST invoices, bills of materials, e-way bills, and financial PDFs.
 
+![Factory Document RAG System Architecture](final.png)
+
 This project focuses on the business problem that matters most in practice: given an invoice number, supplier, amount, line item, material code, or phrase, return the correct document, page, and supporting evidence quickly.
 
 ## Overview
