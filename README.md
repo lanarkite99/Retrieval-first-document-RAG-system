@@ -42,7 +42,6 @@ Best-fit use cases:
 - e-way bill lookup
 - evidence-backed internal document search
 
-It should not be positioned as a universal document automation or format-independent structured extraction engine. Extraction quality is still meaningfully weaker than retrieval quality on unseen layouts.
 
 ## Architecture
 
@@ -289,11 +288,6 @@ Latest holdout extraction snapshot:
 - Documents passed: `0/18`
 - Field accuracy: `0.5591`
 - Line item accuracy: `0.7222`
-
-Interpretation:
-
-- retrieval is strong enough for a practical v1 document search system
-- extraction is still not strong enough to position this as fully automated document AI
 
 ## Testing
 
