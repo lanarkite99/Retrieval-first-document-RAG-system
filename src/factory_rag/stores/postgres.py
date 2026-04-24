@@ -1,4 +1,5 @@
 import re
+import time
 import uuid
 
 import psycopg2
@@ -13,9 +14,26 @@ class PostgresStore:
         self.connection = None
 
     def _get_connection(self):
-        if self.connection is None or self.connection.closed:
-            self.connection = psycopg2.connect(self.settings.postgres_dsn, connect_timeout=3)
-        return self.connection
+        if self.connection is not None and not self.connection.closed:
+            return self.connection
+
+        last_error = None
+        attempts = max(1, self.settings.postgres_connect_retries)
+
+        for attempt in range(attempts):
+            try:
+                self.connection = psycopg2.connect(
+                    self.settings.postgres_dsn,
+                    connect_timeout=self.settings.postgres_connect_timeout,
+                )
+                return self.connection
+            except psycopg2.OperationalError as exc:
+                last_error = exc
+                self.connection = None
+                if attempt < attempts - 1:
+                    time.sleep(self.settings.postgres_connect_retry_delay)
+
+        raise last_error
 
     def ping(self):
         try:

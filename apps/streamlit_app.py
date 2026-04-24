@@ -8,6 +8,7 @@ import streamlit as st
 
 API_URL = os.getenv("FACTORY_RAG_API_URL", "http://localhost:8000")
 DEFAULT_INGEST_INBOX = os.getenv("FACTORY_RAG_INGEST_INBOX", "/app/data/incoming")
+FIND_TIMEOUT_SECONDS = int(os.getenv("FACTORY_RAG_FIND_TIMEOUT_SECONDS", "300"))
 
 
 def _snippet_widget_key(match, key_prefix):
@@ -57,7 +58,7 @@ def _run_find(query, limit, use_cache):
             "use_cache": use_cache,
         },
         method="POST",
-        timeout=120,
+        timeout=FIND_TIMEOUT_SECONDS,
     )
 
 
@@ -212,9 +213,15 @@ def main():
         st.error(f"Could not reach API: {exc}")
         return
 
-    top_row = st.columns(2)
+    top_row = st.columns(4)
     top_row[0].metric("Matches", result.get("matches") or 0)
     top_row[1].metric("Status", "Found" if result.get("best_match") else "No match")
+    top_row[2].metric("Route", result.get("route") or "-")
+    top_row[3].metric("Answer Backend", result.get("answer_backend") or "-")
+
+    if result.get("answer"):
+        st.markdown("## Answer")
+        st.success(result["answer"])
 
     if not result.get("best_match"):
         st.warning("No matching documents found.")

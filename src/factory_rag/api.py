@@ -102,9 +102,15 @@ def find_documents(request: QueryRequest):
 
 def _build_find_response(response):
     hits = response.get("hits") or []
+    diagnostics = response.get("diagnostics") or {}
     result = {
         "query": response.get("query"),
-        "matches": response.get("diagnostics", {}).get("result_count", 0),
+        "matches": diagnostics.get("result_count", 0),
+        "route": response.get("route"),
+        "answer": response.get("answer"),
+        "answer_backend": diagnostics.get("answer_backend"),
+        "cache_hit": diagnostics.get("cache_hit"),
+        "latency_ms": diagnostics.get("latency_ms"),
         "best_match": None,
         "more_matches": [],
     }

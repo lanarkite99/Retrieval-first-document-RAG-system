@@ -16,6 +16,9 @@ class Settings:
             "RAG_POSTGRES_DSN",
             "postgresql://rag:ragpass@localhost:5432/ragdb",
         )
+        self.postgres_connect_timeout = int(os.getenv("RAG_POSTGRES_CONNECT_TIMEOUT", "5"))
+        self.postgres_connect_retries = int(os.getenv("RAG_POSTGRES_CONNECT_RETRIES", "8"))
+        self.postgres_connect_retry_delay = float(os.getenv("RAG_POSTGRES_CONNECT_RETRY_DELAY", "2"))
         self.qdrant_url = os.getenv("RAG_QDRANT_URL", "http://localhost:6333")
         self.qdrant_collection = os.getenv("RAG_QDRANT_COLLECTION", "document_chunks")
         self.opensearch_url = os.getenv("RAG_OPENSEARCH_URL", "http://localhost:9200")
@@ -42,6 +45,7 @@ class Settings:
         self.chunk_overlap = int(os.getenv("RAG_CHUNK_OVERLAP", "120"))
         self.enable_summary = os.getenv("RAG_ENABLE_SUMMARY", "1") == "1"
         self.cache_ttl_seconds = int(os.getenv("RAG_CACHE_TTL_SECONDS", "600"))
+        self.find_timeout_seconds = int(os.getenv("RAG_FIND_TIMEOUT_SECONDS", "300"))
         self.storage_dir = Path(os.getenv("RAG_STORAGE_DIR", BASE_DIR / "storage"))
         self.data_dir = Path(os.getenv("RAG_DATA_DIR", BASE_DIR / "data"))
         self.ingest_inbox_dir = Path(os.getenv("RAG_INGEST_INBOX", self.data_dir / "incoming"))
