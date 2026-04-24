@@ -26,6 +26,7 @@ It is intentionally retrieval-first rather than parser-first. Structured extract
 - Query routing for exact identifier search, lexical lookup, and hybrid retrieval
 - Evidence-first responses with file path, page, snippet, and confidence
 - Optional Gemini-based answer synthesis on top of retrieved evidence
+- Streamlit surfaces generated answers, route selection, and answer backend for fuzzy semantic queries
 - FastAPI search endpoints for integration
 - Streamlit UI for business users
 - Retrieval and extraction evaluation workflows
@@ -223,6 +224,8 @@ streamlit run apps/streamlit_app.py
 
 The UI surfaces the top match first and shows:
 
+- generated answer when available
+- answer backend and retrieval route
 - document number
 - file name
 - page
@@ -235,6 +238,8 @@ It also includes a simple document intake workflow:
 - users drop PDFs into the configured inbox folder
 - Streamlit triggers bulk ingestion through the API
 - the UI displays processed, duplicate, partial, and failed counts
+
+For broad or fuzzy queries, the UI now shows the generated answer returned by `/find`, including whether the backend answer came from deterministic formatting, extractive logic, or Gemini summarization.
 
 ## Evaluation
 
@@ -316,6 +321,10 @@ RAG_ENABLE_SUMMARY=1
 RAG_STORAGE_DIR=storage
 RAG_DATA_DIR=data
 RAG_INGEST_INBOX=data/incoming
+RAG_POSTGRES_CONNECT_TIMEOUT=5
+RAG_POSTGRES_CONNECT_RETRIES=8
+RAG_POSTGRES_CONNECT_RETRY_DELAY=2
+RAG_FIND_TIMEOUT_SECONDS=300
 ```
 
 Optional alternatives:
@@ -399,6 +408,7 @@ python main.py evaluate eval/datasets/generated_batch_eval.json
 - automated scheduled ingestion from a shared inbox folder
 - `incoming / processed / failed` folder lifecycle for cleaner operations
 - background ingestion jobs instead of long synchronous UI requests
+- stronger startup healthchecks and service readiness coordination across API and Postgres
 - ingestion manifests and richer operational reporting
 - OCR support for scanned documents
 - stronger financial statement retrieval and answer-bearing snippet selection

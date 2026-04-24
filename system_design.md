@@ -12,6 +12,7 @@ The system supports:
 - lexical, structured, and semantic retrieval across multiple stores
 - evidence-first query responses through CLI, FastAPI, and Streamlit
 - optional Gemini-based answer synthesis on top of retrieved evidence
+- Streamlit display of generated answer, route, and answer backend for fuzzy search flows
 - retrieval and extraction evaluation datasets and runners
 - local Docker Compose deployment for a small internal team
 
@@ -570,6 +571,8 @@ Gemini is used only after retrieval and only when enabled.
 
 This is a deliberate design choice because identifiers, rates, codes, and amounts are retrieval problems first and generation problems second.
 
+The current UI path uses `POST /find`, but `/find` now preserves the generated answer, answer backend, and route from the full query response. That means broad or fuzzy queries can surface Gemini-backed summaries directly in Streamlit instead of limiting the UI to match-only rendering. Exact-match and row-level queries still prefer deterministic or extractive answers first.
+
 ---
 
 ## 12. Deployment Design
@@ -602,6 +605,9 @@ flowchart LR
 ```
 
 ### 12.3 Deployment Assumption
+
+The API startup path now includes retry-based Postgres connection handling so container restarts are more robust when the database becomes reachable slightly after the API process begins bootstrapping. This reduces flaky startup failures caused by short one-shot database timeouts.
+
 
 This deployment is appropriate for:
 
@@ -653,7 +659,7 @@ The API provides:
 - verbose search
 - concise search
 
-The concise search endpoint is `POST /find`, designed for UI and business-facing consumption.
+The concise search endpoint is `POST /find`, designed for UI and business-facing consumption. It now carries the answer, answer backend, and route metadata forward from the full query response so thin clients can still display generated answers without switching to the lower-level `/query` contract.
 
 ### 13.3 Streamlit
 
@@ -662,10 +668,12 @@ The Streamlit app is intentionally thin. It delegates retrieval to the API and f
 - one search box
 - inbox-triggered document intake
 - top match display
+- generated answer display when available
+- route and answer-backend visibility
 - additional matches
 - clear file/page/snippet presentation
 
-This keeps UI logic simple and consistent with backend behavior.
+This keeps UI logic simple and consistent with backend behavior while still surfacing Gemini-backed summaries for fuzzy semantic queries.
 
 ---
 
@@ -785,6 +793,7 @@ Important current limitations include:
 - financial statement retrieval is weaker than invoice and BOM retrieval
 - there is no human review workflow or extraction correction interface
 - there is no background job queue for large ingestion workloads
+- startup readiness still depends on container-level service ordering rather than explicit Compose healthchecks
 
 ---
 
